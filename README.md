@@ -29,7 +29,7 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|index: true, null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false|
+|username|string|index: true, null: false|
 ### Association
 - has_many :messages
 - has_many :groups    through:  :members
