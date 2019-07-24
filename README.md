@@ -29,19 +29,19 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|index: true, null: false, unique: true|
 |password|string|null: false|
-|username|string|index: true, null: false|
+|name|string|index: true, null: false|
 ### Association
 - has_many :messages
-- has_many :groups    through:  :members
+- has_many :groups,   through:  :members
 - has_many :members
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|body|text|
+|image|string|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -49,19 +49,17 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|menber_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
-- has_many :users      through:  :members
+- has_many :users,     through:  :members
 - has_many :messages
+- has_many :members
 
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
