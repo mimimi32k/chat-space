@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
- index
- end
+
+  def index
+    
+  end
+ 
+
 end
