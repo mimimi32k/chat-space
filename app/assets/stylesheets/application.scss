@@ -72,6 +72,17 @@
     display: flex;
     padding: 0 40px;
     border-bottom: solid 1px #eeeeee;
+    &__right-btn{
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      color:  #38aef0;
+      border: solid 1px #38aef0;
+      position: absolute;
+      right: 40px;
+    }
     &__left-box{
       margin-top: 35px;
       &__group{
@@ -91,15 +102,4 @@
     background-color: #fafafa;
   }
  }
-}
-.main_contents__nav__right-btn{
-  float: right;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 20px;
-  margin-top: 30px;
-  color:  #38aef0;
-  border: solid 1px #38aef0;
-  position: absolute;
-  right: 40px;
 }
