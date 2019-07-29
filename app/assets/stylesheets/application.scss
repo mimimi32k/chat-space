@@ -41,7 +41,6 @@
       }
     }
   }
-
   .side_body{
     height: calc(100vh - 100px);
     padding: 20px 20px 0;
@@ -95,11 +94,39 @@
         font-size: 12px;
         color: #999999;
       }
-  }
-  &__body{
-    width: calc(100vw - 300px);
+    }
+ }
+ &__body{
     height: calc(100vh - 190px);
     background-color: #fafafa;
-  }
+    padding: 46px 40px;
+    &__timeline{
+      padding-bottom: 40px;
+      &__info{
+        display: flex;
+        margin-bottom: 10px;
+        &__user{
+          display: flex;
+          font-size: 16px;
+          color: #434a54;
+          font-weight: bold;
+        }
+        &__date{
+          display: flex;
+          font-size: 12px;
+          color: #999999;
+          margin-left: 10px;
+        }
+      }
+      &__message{
+        font-size: 14px;
+        color: #434a54;
+        padding-bottom: 40px;
+      }
+    }
  }
+ 
+}
+.post{
+   
 }
