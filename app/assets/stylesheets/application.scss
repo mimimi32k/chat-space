@@ -2,57 +2,63 @@
 @import "font-awesome";
 @import "variable";
 
-
-.side_bloc{
+.flash {
+  width: 100%;
+  line-height: 24px;
+  text-align: center; 
+  background-color: #38aef0;
+  color: #FFFFFF;
+}
+.side_bloc {
   box-sizing: border-box;
   width: 300px;
   height: 100vh;
   float: left;
   background-color: #2f3e51;
-  .side_nav{
+  .side_nav {
     height: 100px;
     background-color: #253141;
     padding: 0 20px;
     display: flex;
-    &__box{
+    &__box {
       display: flex;
       align-items: center;
       line-height: 16px;
       justify-content: space-between;
       width: 100%;
-      &__username{
+      &__username {
         display: flex;
         width: 100%;
         color: #FFFFFF;
         font-weight: bold;
         font-size: 16px;
       }
-      &__menu{
+      &__menu {
         display: flex;
         color: #FFFFFF;
         font-size: inherit;
 
-        &__new-group{
+        &__new-group {
           padding-right: 5px;
         }
-        &__edit-user{
+        &__edit-user {
 
         }
       }
     }
   }
-  .side_body{
+  .side_body {
     height: calc(100vh - 100px);
     padding: 20px 20px 0;
     position: fixed;
-    .group{
-      &__group-name{
+    .group {
+      &__group-name {
         color: #FFFFFF;
         font-size: 15px;
         font-weight: bold;
         margin-bottom: 5px;
       }
-      &__message{
+      &__message {
         color: #FFFFFF;
         font-size: 11px;
         font-weight: bold;
@@ -62,17 +68,17 @@
   }
 }
 
-.main_contents{
+.main_contents {
   float: left;
   width: calc(100vw - 300px);
   height: 100%;
-  &__nav{
+  &__nav {
     position: relative;
     height: 100px;
     display: flex;
     padding: 0 40px;
     border-bottom: solid 1px #eeeeee;
-    &__right-btn{
+    &__right-btn {
       float: right;
       height: 40px;
       line-height: 40px;
@@ -83,54 +89,54 @@
       position: absolute;
       right: 40px;
     }
-    &__left-box{
+    &__left-box {
       margin-top: 35px;
-      &__group{
+      &__group {
         font-size: 20px;
         color: #333333;
         margin-bottom: 15px;
       }
-      &__member-list{
+      &__member-list {
         display: flex;
         font-size: 12px;
         color: #999999;
-        &__member{
+        &__member {
           margin-left: 5px;
         }
       }
     }
  }
- &__body{
+ &__body {
     position: relative;
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding: 46px 40px;
-    &__timeline{
+    &__timeline {
       padding-bottom: 40px;
-      &__info{
+      &__info {
         display: flex;
         margin-bottom: 10px;
-        &__user{
+        &__user {
           display: flex;
           font-size: 16px;
           color: #434a54;
           font-weight: bold;
         }
-        &__date{
+        &__date {
           display: flex;
           font-size: 12px;
           color: #999999;
           margin-left: 10px;
         }
       }
-      &__message{
+      &__message {
         font-size: 14px;
         color: #434a54;
         padding-bottom: 40px;
       }
    }
  }
- &__post{
+ &__post {
   position: absolute;
   position: fixed;
   display: flex;
@@ -140,25 +146,25 @@
   width: calc(100vw - 300px);
   padding: 20px 40px;
   bottom: 0;
-  .post-box{
+  .post-box {
     position: relative;
     display: flex;
     height: 50px;
     padding: 0 40px 0 10px;
     width: 900px;
     background-color: #FFFFFF;
-    &__text{
+    &__text {
     border-style: none;
     padding-top: 6px;
     }
-    &__image{
+    &__image {
     font-size: 1.3rem;
     position: absolute;
     top: 10px;
     right: 10px;
     }
   }
-  .submit-btn{
+  .submit-btn {
     display: flex;
     width: 100px;
     height: 50px;
