@@ -1,0 +1,60 @@
+
+
+%content
+  .flash
+    グループを作成しました
+  %side_contents
+  .side_bloc
+    .side_nav
+      .side_nav__box
+        
+        .side_nav__box__username
+          seo
+        .side_nav__box__menu
+          .side_nav__box__menu__new-group
+            .fa.fa-edit 
+          .side_nav__box__menu__edit-user
+            .fa.fa-cog 
+    .side_body
+      .group
+        .group__group-name
+          sample
+        .group__message
+          Good bye world
+  %main_contents
+  .main_contents
+    .main_contents__nav
+      .main_contents__nav__left-box
+        .main_contents__nav__left-box__group
+          sample
+        .main_contents__nav__left-box__member-list
+          Member : 
+          .main_contents__nav__left-box__member-list__member
+            seo neko
+      .main_contents__nav__right-btn
+        Edit
+    .main_contents__body
+      .main_contents__body__timeline
+        .main_contents__body__timeline__info
+          .main_contents__body__timeline__info__user
+            seo 
+          .main_contents__body__timeline__info__date
+            2019/07/27(Sat)  19:09:28
+        .main_contents__body__timeline__message
+          hello world
+        .main_contents__body__timeline__info
+          .main_contents__body__timeline__info__user
+            mio 
+          .main_contents__body__timeline__info__date
+            2019/07/28(Sun)  19:10:28
+        .main_contents__body__timeline__message
+          hello!!
+    .main_contents__post
+      .post-box
+        %post
+        %input#message_content.post-box__text{name:"message[content]", placeholder:"type a message", type:"text"}/
+        .post-box__image
+          %label.post-box__mask__image
+          = fa_icon 'picture-o', class: 'icon'
+          %input.hidden{type: 'file'}
+      %input.submit-btn{type: 'submit', value: 'Send'}

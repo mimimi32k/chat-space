@@ -1,0 +1,179 @@
+@import "reset";
+@import "font-awesome";
+@import "variable";
+@import "config/colors";
+@import "config/font-size";
+
+.flash {
+  width: 100%;
+  line-height: 24px;
+  text-align: center; 
+  background-color: $light_blue;
+  color: $pure_white;
+}
+.side_bloc {
+  box-sizing: border-box;
+  width: 300px;
+  height: 100vh;
+  float: left;
+  background-color: $side_blue;
+  .side_nav {
+    height: 100px;
+    background-color: $side_navy;
+    padding: 0 20px;
+    display: flex;
+    &__box {
+      display: flex;
+      align-items: center;
+      line-height: 16px;
+      justify-content: space-between;
+      width: 100%;
+      &__username {
+        display: flex;
+        width: 100%;
+        color: $pure_white;
+        font-weight: bold;
+        font-size: $user_name;
+      }
+      &__menu {
+        display: flex;
+        color: $pure_white;
+        font-size: inherit;
+        &__new-group {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+  .side_body {
+    height: calc(100vh - 100px);
+    padding: 20px 20px 0;
+    position: fixed;
+    .group {
+      &__group-name {
+        color: $pure_white;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &__message {
+        color: $pure_white;
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.main_contents {
+  float: left;
+  width: calc(100vw - 300px);
+  height: 100%;
+  &__nav {
+    position: relative;
+    height: 100px;
+    display: flex;
+    padding: 0 40px;
+    border-bottom: solid 1px #eeeeee;
+    &__right-btn {
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      color:  $light_blue;
+      border: solid 1px $light_blue;
+      position: absolute;
+      right: 40px;
+    }
+    &__left-box {
+      margin-top: 35px;
+      &__group {
+        font-size: 20px;
+        color: #333333;
+        margin-bottom: 15px;
+      }
+      &__member-list {
+        display: flex;
+        font-size: $contens_sub_font;
+        color: #999999;
+        &__member {
+          margin-left: 5px;
+        }
+      }
+    }
+ }
+ &__body {
+    position: relative;
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 46px 40px;
+    &__timeline {
+      padding-bottom: 40px;
+      &__info {
+        display: flex;
+        margin-bottom: 10px;
+        &__user {
+          display: flex;
+          font-size: $user_name;
+          color: $font_black;
+          font-weight: bold;
+        }
+        &__date {
+          display: flex;
+          font-size: $contens_sub_font;
+          color: #999999;
+          margin-left: 10px;
+        }
+      }
+      &__message {
+        font-size: 14px;
+        color: $font_black;
+        padding-bottom: 40px;
+      }
+   }
+ }
+ &__post {
+  position: absolute;
+  position: fixed;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #dddddd;
+  height: 90px;
+  width: calc(100vw - 300px);
+  padding: 20px 40px;
+  bottom: 0;
+  .post-box {
+    position: relative;
+    display: flex;
+    height: 50px;
+    padding: 0 40px 0 10px;
+    width: 900px;
+    background-color: $pure_white;
+    &__text {
+    border-style: none;
+    }
+    &__image {
+      font-size: 1.3rem;
+      position: absolute;
+      top: 10px;
+      right: 10px;  
+    .hidden {
+      display: none;
+    }
+   }
+  }
+ }
+  .submit-btn {
+    display: flex;
+    width: 100px;
+    height: 50px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: $light_blue;
+    color: $pure_white;
+  }
+ }
+
+
