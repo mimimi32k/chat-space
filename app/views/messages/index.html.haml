@@ -42,14 +42,19 @@
             2019/07/27(Sat)  19:09:28
         .main_contents__body__timeline__message
           hello world
+        .main_contents__body__timeline__info
+          .main_contents__body__timeline__info__user
+            mio 
+          .main_contents__body__timeline__info__date
+            2019/07/28(Sun)  19:10:28
+        .main_contents__body__timeline__message
+          hello!!
     .main_contents__post
       .post-box
-        .post-box__text
-        %input#message_content.post-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-        %label.post-box__image{:for => "message_image"}
-          .fa.fa-image
-      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
-        
-
-      
-       
+        %post
+        %input#message_content.post-box__text{name:"message[content]", placeholder:"type a message", type:"text"}/
+        .post-box__image
+          %label.post-box__mask__image
+          = fa_icon 'picture-o', class: 'icon'
+          %input.hidden{type: 'file'}
+      %input.submit-btn{type: 'submit', value: 'Send'}
