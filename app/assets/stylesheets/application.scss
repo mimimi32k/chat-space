@@ -3,14 +3,11 @@
 @import "variable";
 @import "config/colors";
 @import "config/font-size";
+@import "modules/user";
+@import "modules/group";
+@import "modules/flash";
 
-.flash {
-  width: 100%;
-  line-height: 24px;
-  text-align: center; 
-  background-color: $light_blue;
-  color: $pure_white;
-}
+
 .side_bloc {
   box-sizing: border-box;
   width: 300px;
@@ -41,6 +38,14 @@
         font-size: inherit;
         &__new-group {
           padding-right: 5px;
+        .icon {
+          color: $pure_white;
+        }
+        }
+        &__edit-user {
+        .icon {
+          color: $pure_white;
+        }
         }
       }
     }
