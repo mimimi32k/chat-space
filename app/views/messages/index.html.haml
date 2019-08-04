@@ -18,10 +18,12 @@
               = fa_icon "cog", class: 'icon'
     .side_body
       .group
-        .group__group-name
-          sample
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .group__group-name
+              = group.name
         .group__message
-          Good bye world
+          メッセージはまだありません。
   %main_contents
   .main_contents
     .main_contents__nav
