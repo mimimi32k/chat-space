@@ -56,14 +56,15 @@
       &__group-name {
         color: $pure_white;
         font-size: 15px;
-        font-weight: bold;
         margin-bottom: 5px;
       }
       &__message {
         color: $pure_white;
         font-size: 11px;
-        font-weight: bold;
         margin-bottom: 40px;
+      }
+      a{
+        text-decoration: none;
       }
     }
   }
@@ -108,8 +109,9 @@
     }
  }
  &__body {
+    height: calc(100vh - 280px);
     position: relative;
-    height: calc(100vh - 284px);
+    overflow: scroll;
     background-color: #fafafa;
     padding: 46px 40px;
     &__timeline {
@@ -128,11 +130,11 @@
           margin-left: 10px;
         }
       }
-      &__message {
-        font-size: 14px;
-        color: $font_black;
-        padding-bottom: 40px;
-      }
+        &__message {
+          font-size: 14px;
+          color: $font_black;
+          margin-bottom: 10px;
+        }
    }
  }
  &__post {

@@ -6,16 +6,16 @@
     .main_contents__nav
       .main_contents__nav__left-box
         .main_contents__nav__left-box__group
-          sample
+          = @group.name
         .main_contents__nav__left-box__member-list
           Member : 
           .main_contents__nav__left-box__member-list__member
-            seo neko
+            = @group.users.name
       .main_contents__nav__right-btn
         Edit
     .main_contents__body
       = render @messages  
-      
+
     .main_contents__post
       .post-box
         = form_for [@group, @message] do |f|
