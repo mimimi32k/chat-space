@@ -1,30 +1,7 @@
+.contents
 
-
-%content
+  = render 'messages/side_bar'
   
-  %side_contents
-  .side_bloc
-    .side_nav
-      .side_nav__box
-        
-        .side_nav__box__username
-          = current_user.name
-        .side_nav__box__menu
-          .side_nav__box__menu__new-group
-            = link_to new_group_path do
-              = fa_icon "edit", class: 'icon'
-          .side_nav__box__menu__edit-user
-            = link_to edit_user_path(current_user) do
-              = fa_icon "cog", class: 'icon'
-    .side_body
-      .group
-        - current_user.groups.each do |group|
-          = link_to group_messages_path(group) do
-            .group__group-name
-              = group.name
-        .group__message
-          メッセージはまだありません。
-  %main_contents
   .main_contents
     .main_contents__nav
       .main_contents__nav__left-box
@@ -37,27 +14,14 @@
       .main_contents__nav__right-btn
         Edit
     .main_contents__body
-      .main_contents__body__timeline
-        .main_contents__body__timeline__info
-          .main_contents__body__timeline__info__user
-            seo 
-          .main_contents__body__timeline__info__date
-            2019/07/27(Sat)  19:09:28
-        .main_contents__body__timeline__message
-          hello world
-        .main_contents__body__timeline__info
-          .main_contents__body__timeline__info__user
-            mio 
-          .main_contents__body__timeline__info__date
-            2019/07/28(Sun)  19:10:28
-        .main_contents__body__timeline__message
-          hello!!
+      = render @messages  
+      
     .main_contents__post
       .post-box
-        %post
-        %input#message_content.post-box__text{name:"message[content]", placeholder:"type a message", type:"text"}/
-        .post-box__image
-          %label.post-box__mask__image
-          = fa_icon 'picture-o', class: 'icon'
-          %input.hidden{type: 'file'}
-      %input.submit-btn{type: 'submit', value: 'Send'}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'post-box__text', placeholder: 'type a message'
+          .post-box__image
+            = f.label :image, class: 'post-box__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'submit-btn'
