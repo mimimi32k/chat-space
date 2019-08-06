@@ -8,6 +8,7 @@
 @import "modules/flash";
 
 
+
 .side_bloc {
   box-sizing: border-box;
   width: 300px;
@@ -23,10 +24,8 @@
       display: flex;
       align-items: center;
       line-height: 16px;
-      justify-content: space-between;
       width: 100%;
       &__username {
-        display: flex;
         width: 100%;
         color: $pure_white;
         font-weight: bold;
@@ -53,19 +52,19 @@
   .side_body {
     height: calc(100vh - 100px);
     padding: 20px 20px 0;
-    position: fixed;
     .group {
       &__group-name {
         color: $pure_white;
         font-size: 15px;
-        font-weight: bold;
         margin-bottom: 5px;
       }
       &__message {
         color: $pure_white;
         font-size: 11px;
-        font-weight: bold;
         margin-bottom: 40px;
+      }
+      a{
+        text-decoration: none;
       }
     }
   }
@@ -110,8 +109,9 @@
     }
  }
  &__body {
+    height: calc(100vh - 280px);
     position: relative;
-    height: calc(100vh - 190px);
+    overflow: scroll;
     background-color: #fafafa;
     padding: 46px 40px;
     &__timeline {
@@ -120,65 +120,63 @@
         display: flex;
         margin-bottom: 10px;
         &__user {
-          display: flex;
           font-size: $user_name;
           color: $font_black;
           font-weight: bold;
         }
         &__date {
-          display: flex;
           font-size: $contens_sub_font;
           color: #999999;
           margin-left: 10px;
         }
       }
-      &__message {
-        font-size: 14px;
-        color: $font_black;
-        padding-bottom: 40px;
-      }
+        &__message {
+          font-size: 14px;
+          color: $font_black;
+          margin-bottom: 10px;
+        }
    }
  }
  &__post {
-  position: absolute;
-  position: fixed;
-  display: flex;
-  box-sizing: border-box;
-  background-color: #dddddd;
-  height: 90px;
-  width: calc(100vw - 300px);
-  padding: 20px 40px;
-  bottom: 0;
-  .post-box {
     position: relative;
-    display: flex;
+    box-sizing: border-box;
+    background-color: #dddddd;
+    height: 90px;
+    width: calc(100vw - 300px);
+    padding: 20px 40px;
+    bottom: 0;
+  .post-box {
     height: 50px;
     padding: 0 40px 0 10px;
     width: 900px;
     background-color: $pure_white;
     &__text {
     border-style: none;
+    line-height: 50px;
+    align-items: center;
+    width: 850px;
     }
     &__image {
       font-size: 1.3rem;
       position: absolute;
-      top: 10px;
-      right: 10px;  
+      right: 80px; 
+      top: 15px; 
     .hidden {
       display: none;
     }
    }
   }
- }
   .submit-btn {
-    display: flex;
+    position: absolute;
+    right: 40px;
     width: 100px;
     height: 50px;
-    padding: 0 30px;
     margin-left: 15px;
+    padding: 0 30px;
     background-color: $light_blue;
     color: $pure_white;
   }
+ }
  }
 
 
