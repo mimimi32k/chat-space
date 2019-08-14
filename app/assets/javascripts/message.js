@@ -24,7 +24,7 @@ $(function() {
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
-      url: href,
+      url: url,
       type: "POST",
       data: formData,
       dataType: 'json',
@@ -33,8 +33,11 @@ $(function() {
     })
     .done(function(message){
       var html = buildHTML(message);
-      $('.comments').append(html)
-      $('.textbox').val('')
+      $('.main_contents__body').append(html)
+      $('#message_content').val('')
+      $('.main_contents__body').animate({scrollTop: $('.main_contents__body')[0].scrollHeight}, 500);
+      
+      
     })
     .fail(function(){
       alert('error');
