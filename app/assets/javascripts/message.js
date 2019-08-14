@@ -9,7 +9,7 @@ $(function() {
                      ${message.user_name}
                    </div>
                    <div class="main_contents__body__timeline__info__date">
-                     ${message.created_at}
+                     ${message.time}
                    </div>
                   </div>
                   <div class="main_contents__body__timeline__message">
