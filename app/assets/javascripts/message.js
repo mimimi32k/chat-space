@@ -22,22 +22,25 @@ $(function() {
   $('#new_message').on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
-    var url = window.location.href + '/comments'
-                    $.ajax({
-                      url: href,
-                      type: "POST",
-                      data: formData,
-                      dataType: 'json',
-                      processData: false,
-                      contentType: false
-                    })
-                    .done(function(message){
-                      var html = buildHTML(message);
-                      $('.comments').append(html)
-                      $('.textbox').val('')
-                    })
-                  })
-                });
-
+    var url = $(this).attr('action');
+    $.ajax({
+      url: href,
+      type: "POST",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(message){
+      var html = buildHTML(message);
+      $('.comments').append(html)
+      $('.textbox').val('')
+    })
+    .fail(function(){
+      alert('error');
+    })
+  })
+});               
+                
 
                   
