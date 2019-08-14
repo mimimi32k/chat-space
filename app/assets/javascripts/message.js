@@ -1,5 +1,8 @@
 $(function() {
   function buildHTML(message){
+    var image = ""
+    message.image ? image = `<img src="${message.image}">` : image = ""
+
     var html = `<div class="main_contents__body__timeline">
                   <div class="main_contents__body__timeline__info">
                    <div class="main_contents__body__timeline__info__user">
@@ -12,8 +15,8 @@ $(function() {
                   <div class="main_contents__body__timeline__message">
                     <p class="main_contents__body__timeline__message__content">
                       ${message.content}
-                    <img class="lower-message__image" src="/message/image/${message.image}">
                     </p>
+                     ${image}
                   </div>
                 </div>`
     return html;
@@ -35,9 +38,8 @@ $(function() {
       var html = buildHTML(message);
       $('.main_contents__body').append(html)
       $('#message_content').val('')
+      $('.submit-btn').prop('disabled', false);
       $('.main_contents__body').animate({scrollTop: $('.main_contents__body')[0].scrollHeight}, 500);
-      
-      
     })
     .fail(function(){
       alert('error');
