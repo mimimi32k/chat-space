@@ -9,4 +9,5 @@
     - if message.content.present?
       %p.main_contents__body__timeline__message__content
         = message.content
-        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?  
+      .main_contents__body__timeline__message__content
+      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?  
