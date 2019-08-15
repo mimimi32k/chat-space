@@ -36,8 +36,9 @@ $(function() {
     })
     .done(function(message){
       var html = buildHTML(message);
-      $('.main_contents__body').append(html)
-      $('#message_content').val('')
+      $('.main_contents__body').append(html);
+      $('#message_content').val('');
+      $('label.post-box__image').val('');
       $('.submit-btn').prop('disabled', false);
       $('.main_contents__body').animate({scrollTop: $('.main_contents__body')[0].scrollHeight}, 500);
     })
