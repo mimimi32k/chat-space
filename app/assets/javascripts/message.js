@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(message){
     var image = ""
-    message.image ? image = `<img src="${message.image}">` : image = ""
+    message.image ? image = `<img src="${message.image}" width="256" height="256">` : image = ""
 
     var html = `<div class="main_contents__body__timeline">
                   <div class="main_contents__body__timeline__info">
@@ -37,8 +37,7 @@ $(function() {
     .done(function(message){
       var html = buildHTML(message);
       $('.main_contents__body').append(html);
-      $('#message_content').val('');
-      $('label.post-box__image').val('');
+      $('.new_message')[0].reset();
       $('.submit-btn').prop('disabled', false);
       $('.main_contents__body').animate({scrollTop: $('.main_contents__body')[0].scrollHeight}, 500);
     })
