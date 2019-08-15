@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   def index
     @user = User.new
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.json
   end
 
 
