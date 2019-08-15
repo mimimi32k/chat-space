@@ -1,5 +1,5 @@
 $(function(){
-  $('#group_name').on('keydown',function(e){
+  $('#group_name').on('keyup',function(e){
     e.preventDefault();
   })
 });
