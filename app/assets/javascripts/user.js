@@ -9,6 +9,7 @@ $(function(){
   }
   $('#user-search-field').on('keyup',function(){
     var input = $('#user-search-field').val();
+
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -22,8 +23,11 @@ $(function(){
         buildHTML(user);
       });
    })
-   .fail(function() {
+   .fail(function(){
      alert('ユーザー検索に失敗しました');
    })
-  })
+  });
+  $('#user-search-result').on('click', '.chat-group-user__btn--add', function(){
+    console.log("OK");
+   });
 });
