@@ -1,4 +1,11 @@
 $(function(){
+  function buildHTML(users){
+    var html = `<div class="chat-group-user clearfix">
+                  <p class="chat-group-user__name">${users.name}</p>
+                  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="ユーザーのid" data-user-name="ユーザー名">追加</div>
+                </div>`
+    return html;
+  }
   $('#user-search-field').on('keyup',function(){
     var input = $('#user-search-field').val();
     console.log(input);
@@ -9,19 +16,12 @@ $(function(){
       dataType: 'json'
     })
 
-  //  .done(function(users) {
-  //    $(".listview.js-lazy-load-images").empty();
-  //    if (products.length !== 0) {
-  //      products.forEach(function(product){
-  //        appendProduct(product);
-  //      });
-  //    }
-  //    else {
-  //      appendErrMsgToHTML("一致する映画はありません");
-  //    }
-  //  })
-    // .fail(function() {
-    //  alert('ユーザー検索に失敗しました');
-    // })
+   .done(function(users) {
+    var html = buildHTML(users);
+    $('.main_contents__body').append(html);
+   })
+    .fail(function() {
+     alert('ユーザー検索に失敗しました');
+    })
   })
 });
