@@ -28,6 +28,8 @@ $(function(){
    })
   });
   $('#user-search-result').on('click', '.chat-group-user__btn--add', function(){
+    $(this).parent()
+    $('#user-search-result').remove();
     console.log("OK");
    });
 });
