@@ -27,9 +27,13 @@ $(function(){
      alert('ユーザー検索に失敗しました');
    })
   });
-  $('#user-search-result').on('click', '.chat-group-user__btn--add', function(){
-    $(this).parent()
-    $('#user-search-result').remove();
+  $('#user-search-result').on('click', '.user-search-add', function(){
+    var userId = $(this).data('取得したid');
+    var userName = $(this).data('取得したname');
+    htmlを呼ぶ関数名(設定した２つの変数を引数として代入);
+    $(this).parent().remove();
     console.log("OK");
    });
+  
+   
 });
