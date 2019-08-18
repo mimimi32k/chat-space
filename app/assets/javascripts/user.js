@@ -39,7 +39,7 @@ $(function(){
     var userName = $(this).attr('data-user-name');
     buildUser(userId, userName);
   });
-  $('.chat-group-user').on('click', '.user-search-remove', function(){
+  $('.chat-group-form__field--right#user_list').on('click', '.user-search-remove', function(){
     $(this).parent().remove();
   });
    
