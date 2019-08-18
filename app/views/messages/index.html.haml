@@ -13,7 +13,8 @@
             - @group.users.each do |user|
               = user.name
       .main_contents__nav__right-btn
-        Edit
+        = link_to "Edit", edit_group_path(params[:group_id]), method: :get
+         
     .main_contents__body
       = render @messages  
 
