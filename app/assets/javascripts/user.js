@@ -25,9 +25,11 @@ $(function(){
     })
    .done(function(users){
      $('#user-search-result').empty();
+     if (users.length !== 0) {
       users.forEach(function(user){ 
         buildHTML(user);
       });
+     }
    })
    .fail(function(){
      alert('ユーザー検索に失敗しました');
@@ -42,5 +44,4 @@ $(function(){
   $('.chat-group-form__field--right#user_list').on('click', '.user-search-remove', function(){
     $(this).parent().remove();
   });
-   
 });

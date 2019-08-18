@@ -25,7 +25,8 @@
     .chat-group-form__field--right#user_list
       - group.users.each do |user|
         .chat-group-user
-          = user.name
+          %input{name: "group[user_ids][]", type: "hidden", value: "current_user.id"}/
+          = user.name    
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
