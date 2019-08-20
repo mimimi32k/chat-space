@@ -43,6 +43,30 @@ $(function() {
       alert('error');
     })
   })
+  var reloadMessages = function() {
+    
+    var last_message_id = $('.message:last').data("message-id");
+    console.log(last_message_id); 
+    $.ajax({
+      url: 'api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = ''; 
+      messages.forEach(function(message){ 
+        insertHTML = buildHTML(message); 
+        $('.main_contents__body__timeline').append(insertHTML);
+      });
+      $('.main_contents__body__timeline').animate({scrollTop: $('.main_contents__body__timeline')[0].scrollHeight}, 500);
+       
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
+  // setInterval(reloadMessages, 5000); 
 });               
                 
 
