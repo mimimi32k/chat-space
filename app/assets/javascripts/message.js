@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(message){
     var image = message.image ? `<img src="${message.image}" width="256" height="256">` : '';
-    var html = `<div class="main_contents__body__timeline">
+    var html = `<div class="main_contents__body__timeline" data-message-id="${message.id}">
                   <div class="main_contents__body__timeline__info">
                    <div class="main_contents__body__timeline__info__user">
                      ${message.user_name}
@@ -45,7 +45,7 @@ $(function() {
   })
   var reloadMessages = function() {
     
-    var last_message_id = $('.message:last').data("message-id");
+    var last_message_id = $('.main_contents__body__timeline:last').data("message-id");
     console.log(last_message_id); 
     $.ajax({
       url: 'api/messages',
@@ -54,19 +54,19 @@ $(function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      console.log(messages)
       var insertHTML = ''; 
       messages.forEach(function(message){ 
         insertHTML = buildHTML(message); 
-        $('.main_contents__body__timeline').append(insertHTML);
+        $('.main_contents__body').append(insertHTML);
       });
-      $('.main_contents__body__timeline').animate({scrollTop: $('.main_contents__body__timeline')[0].scrollHeight}, 500);
-       
+      $('.main_contents__body').animate({scrollTop: $('.main_contents__body')[0].scrollHeight}, 500);
     })
     .fail(function() {
-      console.log('error');
+      // alert('error');
     });
   };
-  // setInterval(reloadMessages, 5000); 
+  setInterval(reloadMessages, 5000); 
 });               
                 
 
