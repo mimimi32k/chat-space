@@ -59,10 +59,8 @@ $(function() {
       messages.forEach(function(message){ 
         insertHTML = buildHTML(message); 
         $('.main_contents__body').append(insertHTML);
-        $('.new_message')[0].reset();
-        $('.submit-btn').prop('disabled', false);
-        $('.main_contents__body').animate({scrollTop: $('.main_contents__body')[0].scrollHeight}, 500);
       });
+      $('.main_contents__body').animate({scrollTop: $('.main_contents__body')[0].scrollHeight}, 500);
     })
     .fail(function() {
       alert('更新に失敗しました');
