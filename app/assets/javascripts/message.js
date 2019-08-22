@@ -65,7 +65,7 @@ $(function() {
       });
     })
     .fail(function() {
-      // alert('更新に失敗しました');
+      alert('更新に失敗しました');
     });
     }
   };
