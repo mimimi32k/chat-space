@@ -12,7 +12,7 @@ $(function(){
                   <p class='chat-group-user__name'>${userName}</p>
                   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
                 </div>`
-  $('.chat-group-form__field--right#user_list').append(html);
+  $('#user_list').append(html);
   }
   
   $('#user-search-field').on('keyup',function(){
@@ -41,7 +41,7 @@ $(function(){
     var userName = $(this).attr('data-user-name');
     buildUser(userId, userName);
   });
-  $('.chat-group-form__field--right#user_list').on('click', '.user-search-remove', function(){
+  $('#user_list').on('click', '.user-search-remove', function(){
     $(this).parent().remove();
   });
 });

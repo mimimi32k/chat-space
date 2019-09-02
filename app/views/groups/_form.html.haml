@@ -22,11 +22,18 @@
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
-    .chat-group-form__field--right#user_list
-      %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}/
-      - group.users.each do |user|
-        .chat-group-user
-          = user.name 
+    .chat-group-form__field--right
+      #user_list
+        - group.users.each do |user|
+          .chat-group-user.cleafix
+            = f.hidden_field :user_ids, value: "#{user.id}", name: "group[user_ids][]"
+            %p.chat-group-user__name
+              = user.name
+              - if user != current_user
+                .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+
+
+
           
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
