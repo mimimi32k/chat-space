@@ -64,7 +64,7 @@ gem 'haml-rails'
 
 gem "font-awesome-rails"
 
-gem 'devise'
+gem "devise", ">= 4.7.1"
 
 gem 'carrierwave'
 
